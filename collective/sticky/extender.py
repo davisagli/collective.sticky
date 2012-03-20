@@ -36,5 +36,8 @@ class StickySchemaExtender(object):
 
 
 @indexer(IATNewsItem)
-def sticky(context):
-    return context.getField('sticky').get(context)
+def sticky_sort(context):
+    date = context.getField('effectiveDate').get(context)
+    if date is None:
+        date = context.getField('creation_date').get(context)
+    return (context.getField('sticky').get(context), date.timeTime())

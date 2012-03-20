@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<atcttool>
+ <topic_indexes>
+  <index name="sticky_sort" description="" enabled="True"
+     friendlyName="Stickiness, then date" />
+ </topic_indexes>
+</atcttool>

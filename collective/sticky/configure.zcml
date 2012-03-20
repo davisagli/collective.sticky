@@ -15,20 +15,7 @@
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
 
-  <browser:page
-      for="Products.ATContentTypes.interfaces.IATTopic"
-      name="sticky_summary_view"
-      template="sticky_summary_view.pt"
-      permission="zope2.View"
-      layer=".interfaces.IBrowserLayer"
-      />
-
-  <browser:resource
-      name="pin.png"
-      file="pin.png"
-      layer=".interfaces.IBrowserLayer"
-      />
-
   <adapter factory=".extender.StickySchemaExtender" provides="archetypes.schemaextender.interfaces.ISchemaExtender" />
+  <adapter factory=".extender.sticky_sort" name="sticky_sort" />
 
 </configure>
