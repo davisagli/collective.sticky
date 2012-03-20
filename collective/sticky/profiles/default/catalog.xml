@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<object name="portal_catalog" meta_type="Plone Catalog Tool">
+ <index name="sticky" meta_type="BooleanIndex" purge="False">
+  <indexed_attr value="sticky" />
+ </index>
+ <column value="sticky"/>
+</object>

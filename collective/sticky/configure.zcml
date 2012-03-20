@@ -1,0 +1,34 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:gs="http://namespaces.zope.org/genericsetup"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    i18n_domain="collective.sticky">
+
+  <!-- Include configuration for dependencies listed in setup.py -->
+  <includeDependencies package="." />
+
+  <gs:registerProfile
+      name="default"
+      title="collective.sticky"
+      directory="profiles/default"
+      description="Allows news items to be marked as 'sticky' so they appear at the top of collections."
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+
+  <browser:page
+      for="Products.ATContentTypes.interfaces.IATTopic"
+      name="sticky_summary_view"
+      template="sticky_summary_view.pt"
+      permission="zope2.View"
+      layer=".interfaces.IBrowserLayer"
+      />
+
+  <browser:resource
+      name="pin.png"
+      file="pin.png"
+      layer=".interfaces.IBrowserLayer"
+      />
+
+  <adapter factory=".extender.StickySchemaExtender" provides="archetypes.schemaextender.interfaces.ISchemaExtender" />
+
+</configure>
