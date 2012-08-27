@@ -10,15 +10,15 @@
 
     <metal:content-core fill-slot="content-core">
 
-      <div class="sticky-items">
+      <div class="sticky-items"
+           tal:define="folderContents python:context.queryCatalog(is_sticky=True)"
+           tal:condition="folderContents">
         <h2>Featured Stories</h2>
-        <tal:block tal:define="folderContents python:context.queryCatalog(is_sticky=True)">
-          <metal:block use-macro="context/folder_summary_view/macros/listing" />
-        </tal:block>
+        <metal:block use-macro="context/folder_summary_view/macros/listing" />
+        <p>&nbsp;</p>
+        <h2>Recent News</h2>
       </div>
 
-      <p>&nbsp;</p>
-      <h2>Recent News</h2>
       <tal:block tal:define="folderContents python:context.queryCatalog(is_sticky=False)">
         <metal:block use-macro="context/folder_summary_view/macros/listing" />
       </tal:block>
