@@ -7,6 +7,14 @@
   <!-- Include configuration for dependencies listed in setup.py -->
   <includeDependencies package="." />
 
+  <browser:page
+     for="Products.ATContentTypes.interfaces.IATTopic"
+     name="sticky_summary_view"
+     template="sticky_summary_view.pt"
+     permission="zope2.View"
+     layer=".interfaces.IBrowserLayer"
+     />
+
   <gs:registerProfile
       name="default"
       title="collective.sticky"
