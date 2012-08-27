@@ -25,5 +25,6 @@
 
   <adapter factory=".extender.StickySchemaExtender" provides="archetypes.schemaextender.interfaces.ISchemaExtender" />
   <adapter factory=".extender.sticky_sort" name="sticky_sort" />
+  <adapter factory=".extender.is_sticky" name="is_sticky" />
 
 </configure>
