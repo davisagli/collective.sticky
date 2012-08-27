@@ -3,4 +3,7 @@
  <index name="sticky_sort" meta_type="FieldIndex" purge="False">
   <indexed_attr value="sticky_sort" />
  </index>
+ <index name="is_sticky" meta_type="FieldIndex" purge="False">
+  <indexed_attr value="is_sticky" />
+ </index>
 </object>

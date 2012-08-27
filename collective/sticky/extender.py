@@ -41,3 +41,7 @@ def sticky_sort(context):
     if date is None:
         date = context.getField('creation_date').get(context)
     return (context.getField('sticky').get(context), date.timeTime())
+
+@indexer(IATNewsItem)
+def is_sticky(context):
+    return context.getField('sticky').get(context)
